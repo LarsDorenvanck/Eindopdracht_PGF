@@ -64,7 +64,7 @@ def casualty_calculator_menu():
     # Calculate radius for 1st degree burns (in km)
     # Using the formula: R = Y^(1/3) * 1.19
     # This formula gives the radius for 1st degree burns, which includes everyone up to 1st degree burns.
-    radius = (kt ** (1/3)) * 1.19
+    radius = float((kt ** (1/3)) * 1.19)
     print(f"Calculated radius for up-to 1st degree burns: {radius:.2f} km")
     casualty_calculator(place_name, radius, kt)
     input("Hit ENTER to continue...")
@@ -97,14 +97,17 @@ def escape_time_calculator_menu():
         print("Available payloads:")
         for bomb, data in bombs.items():
             print(f"{bomb}: Speed: {data['speed']} km/h")
-
         bombs = convert_keys_to_lowercase(bombs)
 
         while True:
             choice = input("Enter the payload name or a custom speed in km/h: ").lower()
-            if choice.lower() in map(str.lower, bombs.keys()):
-                payload_speed = bombs[choice.lower()]['speed']
+            #create list of bomb keys
+            bomb_keys = list(bombs.keys())
+            #if choice is in bomb keys, use its according speed
+            if choice in bomb_keys:
+                payload_speed = bombs[choice]['speed']
                 break
+            #otherwise try the number being input
             try:
                 payload_speed = float(choice)
                 break

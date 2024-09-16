@@ -18,9 +18,7 @@ def casualty_calculator(place_name, radius, kt):
 
     Returns:
         None: This function doesn't return a value, but prints the report
-              and saves it to a file.
-
-    Side effects:
+        and saves it to a file.
         - Prints the casualty report to the console.
         - Saves the report to a text file in the 'reports' directory.
     """

@@ -24,13 +24,14 @@ def get_population_count(latitude, longitude, radius):
         "radius": radius,
         "maxRows": 500,  # Maximum number of FREE results
         "username": "lars_bela",  # Your GeoNames username
-        "cities": "cities1000"  # Only cities with population > 15000
+        "cities": "cities1000"  # Only cities with population > ####
     }
 
     try:
         # Make the API request
         response = requests.get(base_url, params=params)
-        response.raise_for_status()  # Raise an exception for bad responses
+        if response.status_code != 200:
+            return f"Error fetching population data: Status code {response.status_code}"
         data = response.json()
         
         # Calculate total population and count cities

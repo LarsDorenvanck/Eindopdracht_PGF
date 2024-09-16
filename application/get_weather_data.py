@@ -1,5 +1,4 @@
 import os
-
 import requests
 from dotenv import load_dotenv
 
@@ -26,11 +25,11 @@ def get_weather_and_wind(latitude, longitude):
         "lon": longitude,
         "appid": OPENWEATHER_API_KEY
     }
-
     try:
         # Make the API request
         response = requests.get(base_url, params=params)
-        response.raise_for_status()  # Raise an exception for bad responses
+        if response.status_code != 200:
+            return f"Error fetching weather data: Status code {response.status_code}"
         data = response.json()
 
         # Extract relevant information
@@ -70,3 +69,10 @@ def calculate_fallout_radius_and_risk(wind_speed, blast_radius, weather_descript
     risk_percentage = weather_factor * 100
     
     return fallout_radius, risk_percentage
+
+
+if __name__ == "__main__":
+    lat = 52.370216 #latitude amsterdam
+    long = 4.895168 #longitude amsterdam
+    get_weather_and_wind(lat, long)
+

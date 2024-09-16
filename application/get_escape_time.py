@@ -3,12 +3,15 @@ from utils import transform_place_to_latlong, get_closest_place
 
 def get_escape_time(start_location, end_location, missile_speed):
     """
-    Get the escape time between two locations for a given missile speed.
-    
-    :param start_location: Starting location (city name or coordinates)
-    :param end_location: Ending location (city name or coordinates)
-    :param missile_speed: Speed of the missile in km/h
-    :return: Escape time in minutes, or None if coordinates couldn't be found
+    Calculate the estimated escape time from a start location to an end location based on the speed of a missile.
+
+    Args:
+        start_location (str): The starting location.
+        end_location (str): The ending location.
+        missile_speed (float): The speed of the missile in kilometers per hour.
+
+    Returns:
+        float or None: The estimated escape time in minutes, rounded to two decimal places. Returns None if the locations cannot be converted to coordinates.
     """
     start_coords = transform_place_to_latlong(start_location)
     print(get_closest_place(start_location))

@@ -1,4 +1,4 @@
-reports/
+application/reports/
 .env
 
 # Byte-compiled / optimized / DLL files

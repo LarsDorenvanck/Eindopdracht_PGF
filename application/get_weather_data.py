@@ -1,4 +1,11 @@
+import os
+
 import requests
+from dotenv import load_dotenv
+
+load_dotenv()
+OPENWEATHER_API_KEY = os.getenv("OPENWEATHER_API_KEY")
+
 
 def get_weather_and_wind(latitude, longitude):
     """
@@ -17,7 +24,7 @@ def get_weather_and_wind(latitude, longitude):
     params = {
         "lat": latitude,
         "lon": longitude,
-        "appid": "20f1e13d0de197459930d3f087fbc3c7"
+        "appid": OPENWEATHER_API_KEY
     }
 
     try:
@@ -48,9 +55,11 @@ def calculate_fallout_radius_and_risk(wind_speed, blast_radius, weather_descript
     Returns:
         tuple: A tuple containing the calculated fallout radius and risk percentage.
     """
+    #some estimation of what a reasonable spread factor is.
     spread_factor = wind_speed / 10
     fallout_radius = blast_radius * (1 + spread_factor)
-    
+
+    #Map weather to risk percentage. If weather is not mapped, use 67%
     weather_factor = {
         "rain": 1.0,
         "thunderstorm": 1.0,

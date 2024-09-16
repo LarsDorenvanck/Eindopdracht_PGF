@@ -1,0 +1,26 @@
+MOCKUP
+
+welcome to total destruction casualty calculator
+
+What function do you want to use?
+1. Casualty calculator
+    - Choose your location
+        - "Tokyo"
+    - Choose your bomb
+        - "Big boy"
+        - "Tsar bomba"
+            RESULT: 500000 casualties vaporized
+            RESULT: 500000 casualties dangerously exposed to fallout
+2. Survival chance calculator
+    - Choose your location
+        - "Tokyo"
+    - How many targets are being nuked? (random distribution)
+        - "X"
+    - What is the intensity of the nuclear strike(s)?
+        - 1. Tactical strikes (small bombs destroying key infrastructure)
+        - 2. Strategic strikes (large bombs destroying large cities)
+        - 3. Global thermonuclear war, mutually assured destruction (maximized damage)
+            RESULT: X% chance being vaporized
+            RESULT: X% chance being dangerously exposed fallout (assuming today's weather)
+3. tbd
+

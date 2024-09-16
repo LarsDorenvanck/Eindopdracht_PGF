@@ -1,0 +1,19 @@
+reports/
+.env
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# OS generated files
+.DS_Store
+
+# Virtual environment
+.venv/
+
+# PyCharm settings
+.idea/
+
+
+
+

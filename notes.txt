@@ -1,0 +1,33 @@
+1.....................................................................................
+In some situations, the population count is (seemingly) not correct.
+This is because prompting e.g. "york" returns multiple places with the same name.
+Apparently the Archidiocese of York is returned prior to the city of York. But has 0 population
+Prompting a small blast radius (1km) exempts actual "York" from the search, so the population is 0.
+
+A possible solution is to return the largest population number from the list of places (Though, new york could then be picked, which is wrong too). 
+But ideally more accurate mapping of population numbers to latlong coordinates is needed.
+
+
+2.....................................................................................
+A natural choice for more accurate mapping of population numbers to latlong coordinates could be achieved by using an image map. With population density stored in the pixels.
+
+
+3.....................................................................................
+Currently wind speed and weather conditions are used to estimage the fallout casuality count.
+A more accurate method could be using a model that calculates the spread of radiation based on the type of nuclear bomb and more advanced meteorological, geographical and topographical conditions.
+* wind direction is not accounted for
+* fallout zones other than a circle are not accounted for
+* no account for differences in altitude of detonation, ground zero location.
+* fallout over time
+
+4.....................................................................................
+the escape time calculator tool should use a graph/ramp to (re)map the speed accordingly to the time it takes to: get up to speed, adjust to verticality components.
+
+
+5...............................................
+A survival chance function is not feasable and has been scrapped. This is because: the most straightforward way to implement this is to use a 'for each missile sent' to calculate the accumulated death toll.
+The result of this is instead of returning the risk of being blown up, it risks blowing up the API and takes forever.
+A suitable solution to this is to use a image-map to source population centers and create a selection of what pixels are hit, and calculate the death toll from there. Instead of reverse geolocating.
+
+6.......................................................
+

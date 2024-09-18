@@ -1,6 +1,5 @@
 # Import generic functions
 import os
-import sys
 import json
 # Import functions from other files
 from casualty_calc import casualty_calculator

@@ -1,5 +1,4 @@
 import os
-import sys
 
 # Add the current directory to the Python path
 current_dir = os.path.dirname(os.path.abspath(__file__))
@@ -39,6 +38,9 @@ def read_stored_reports():
             report_index = int(choice) - 1
             if 0 <= report_index < len(reports):
                 report_path = os.path.join(report_folder, reports[report_index])
+                if not os.path.exists(report_path):
+                    print(f"Report '{reports[report_index]}' not found. It may have been deleted.")
+                    return None
                 with open(report_path, 'r') as f:
                     return f.read()
             else:

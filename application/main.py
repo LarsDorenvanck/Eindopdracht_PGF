@@ -10,7 +10,6 @@ from get_stored_reports import read_stored_reports
 
 # Add the current directory to the Python path
 current_dir = os.path.dirname(os.path.abspath(__file__))
-sys.path.append(current_dir)
 
 # Sets the path to the bombs.json file
 BOMBS_FILE_PATH = os.path.join(current_dir, 'bombs.json')

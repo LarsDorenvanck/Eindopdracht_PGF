@@ -22,5 +22,8 @@ What function do you want to use?
         - 3. Global thermonuclear war, mutually assured destruction (maximized damage)
             RESULT: X% chance being vaporized
             RESULT: X% chance being dangerously exposed fallout (assuming today's weather)
-3. tbd
+3. Read past reports
+    - previous reports stored:
+        1: tsar bomba, apeldoorn
+        2: Big boy, stockholm
 
